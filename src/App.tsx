@@ -1,11 +1,17 @@
-import './App.css';
+import './shared/styles/App.css';
+import {Suspense} from "react";
+import {AppRouter} from "./providers/config/router-config/app_router";
 
-function App () {
+
+function App() {
 
     return (
         <div className='App'>
-            <p>project-boot-ts</p>
+            <Suspense fallback={<div>Loading...</div>}>
+                <AppRouter/>
+            </Suspense>
         </div>
     );
 }
+
 export default App;
