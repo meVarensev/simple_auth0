@@ -44,7 +44,8 @@ export function AuthenticationForm(props: PaperProps) {
 
             <Divider label="Or continue with email" labelPosition="center" my="lg" />
 
-            <form onSubmit={form.onSubmit(() => {})}>
+            <form onSubmit={form.onSubmit((data) => {
+                console.log(data)})}>
                 <Stack>
                     {type === 'register' && (
                         <TextInput
@@ -97,7 +98,7 @@ export function AuthenticationForm(props: PaperProps) {
                             ? 'Already have an account? Login'
                             : "Don't have an account? Register"}
                     </Anchor>
-                    <Button type="submit" radius="xl">
+                    <Button type="submit" radius="xl" color={"blue"}>
                         {upperFirst(type)}
                     </Button>
                 </Group>
